@@ -12,16 +12,6 @@ namespace TMG.Items
         public int ID => _id;
         public List<ItemModule> Modules => _modules;
 
-        public void AddModule(ItemModule module)
-        {
-            _modules.Add(module);
-        }
-
-        public void RemoveModule(ItemModule module)
-        {
-            _modules.Remove(module);
-        }
-
         public T GetModule<T>(string key) where T : ItemModule
         {
             foreach (ItemModule module in _modules)

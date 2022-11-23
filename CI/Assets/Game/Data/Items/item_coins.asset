@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-6396158712409720040
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 463511fe48a24c749cf3a1ed0e931cc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _key: 
+  _value: 0
+--- !u!114 &-3181197384304937955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e3ba3d5332b4481a97e6aa204541533, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _key: 
+  _value: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6bfa25cd2ff494e91925125e8628c4b, type: 3}
+  m_Name: item_coins
+  m_EditorClassIdentifier: 
+  _id: 0
+  _modules:
+  - {fileID: -6396158712409720040}
+  - {fileID: -3181197384304937955}

@@ -10,10 +10,15 @@ namespace TMG.Items
 
         [SerializeField] private int _amount;
         [SerializeField] private int _limit;
+        [SerializeField] private Item _item;
 
         public int ID { get; }
 
-        [field: SerializeField] public Item Item { get; private set; }
+         public Item Item
+        {
+            get => _item;
+            private set => _item = value;
+        }
 
         public int Amount
         {

@@ -1,13 +1,14 @@
+using System;
 using System.Linq;
-using TMG.Items.Modules;
 using UnityEditor;
 using UnityEditor.UIElements;
+using UnityEngine;
 using UnityEngine.UIElements;
 
 namespace TMG.Items
 {
     [CustomEditor(typeof(Item))]
-    public class ItemEditor : Editor
+    internal class ItemEditor : Editor
     {
         private Item _item;
         private VisualElement _modulesElement;
@@ -22,7 +23,7 @@ namespace TMG.Items
             VisualElement root = new VisualElement();
             _modulesElement = new VisualElement();
             RefreshModules();
-            
+
             root.Add(new PropertyField(serializedObject.FindProperty("_id")));
             root.Add(_modulesElement);
             root.Add(new Button(OnAddModuleClicked) {text = "Add"});
@@ -32,13 +33,9 @@ namespace TMG.Items
 
         private void OnAddModuleClicked()
         {
-            IntItemModule module = CreateInstance<IntItemModule>();
-            _item.AddModule(module);
-            AssetDatabase.AddObjectToAsset(module, _item);
-            EditorUtility.SetDirty(_item);
-            AssetDatabase.SaveAssetIfDirty(_item);
-            
-            RefreshModules();
+            Rect rect = new Rect(Event.current.mousePosition, new Vector2(0, 0));
+            ItemModuleDropDown dropdown = new ItemModuleDropDown(AddModule);
+            dropdown.Show(rect);
         }
 
         private void OnRemoveModuleClicked()
@@ -47,11 +44,40 @@ namespace TMG.Items
                 return;
 
             ItemModule module = _item.Modules.Last();
-            _item.RemoveModule(module);
+            RemoveModule(module);
+        }
+        
+        private void AddModule(Type type)
+        {
+            ScriptableObject module = CreateInstance(type);
+            
+            if (module != null && module is ItemModule itemModule)
+                AddModule(itemModule);
+        }
+
+        private void AddModule<T>() where T : ItemModule
+        {
+            T module = CreateInstance<T>();
+            AddModule(module);
+        }
+
+        private void AddModule(ItemModule module)
+        {
+            _item.Modules.Add(module);
+            AssetDatabase.AddObjectToAsset(module, _item);
+            EditorUtility.SetDirty(_item);
+            AssetDatabase.SaveAssetIfDirty(_item);
+
+            RefreshModules();
+        }
+
+        private void RemoveModule(ItemModule module)
+        {
+            _item.Modules.Remove(module);
             AssetDatabase.RemoveObjectFromAsset(module);
             EditorUtility.SetDirty(_item);
             AssetDatabase.SaveAssetIfDirty(_item);
-            
+
             RefreshModules();
         }
 
