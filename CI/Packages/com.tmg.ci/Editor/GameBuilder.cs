@@ -1,26 +1,42 @@
-using System;
-using UnityEditor;
+﻿using UnityEditor;
 
-namespace Tmg.CI
+namespace TMG.CI
 {
     public static class GameBuilder
     {
-        public static void BuildWithArgumentsAndExit()
+        public static void Build(BuildData data)
         {
-            Build(BuildMode.Parse(Environment.GetCommandLineArgs()));
-            EditorApplication.Exit(0);
+            ApplyBuildSettings(data);
+            BuildPipeline.BuildPlayer(EditorBuildSettings.scenes, data.BuildPath, data.BuildTarget, BuildOptions.None);
+            Exit(0, data);
         }
 
-        public static void Build(BuildMode mode)
+        private static void ApplyBuildSettings(BuildData data)
         {
-            ApplyBuildSettings(mode);
-            
-            // build
+            PlayerSettings.SplashScreen.show = false;
+
+            if (data.ContainsSDKs)
+            {
+                if (data.BuildTarget == BuildTarget.Android)
+                {
+                    PlayerSettings.SetScriptingBackend(BuildTargetGroup.Android, ScriptingImplementation.IL2CPP);
+                    PlayerSettings.Android.targetArchitectures = AndroidArchitecture.All;
+                }
+
+                PlayerSettings.bundleVersion = data.BundleVersion;
+                PlayerSettings.iOS.buildNumber = data.BuildNumber;
+            }
+
+            EditorUserBuildSettings.exportAsGoogleAndroidProject =
+                data.ContainsSDKs && data.BuildTarget == BuildTarget.Android;
         }
 
-        private static void ApplyBuildSettings(BuildMode mode)
+        private static void Exit(int status, BuildData data)
         {
-            string defines = PlayerSettings.GetScriptingDefineSymbolsForGroup(EditorUserBuildSettings.selectedBuildTargetGroup);
+            if (!data.ExitAfter)
+                return;
+
+            EditorApplication.Exit(status);
         }
     }
 }
