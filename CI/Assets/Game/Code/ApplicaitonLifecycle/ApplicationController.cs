@@ -13,6 +13,8 @@ namespace ApplicationController
         {
             yield return SceneManager.LoadSceneAsync("services", LoadSceneMode.Additive);
             yield return SceneManager.LoadSceneAsync("menu", LoadSceneMode.Additive);
+            SceneManager.SetActiveScene(SceneManager.GetSceneByName("menu"));
+            yield return SceneManager.LoadSceneAsync("ui", LoadSceneMode.Additive);
         }
 
         [ContextMenu(nameof(Restart))]
