@@ -6,6 +6,12 @@
       "source": "embedded",
       "dependencies": {}
     },
+    "com.tmg.items": {
+      "version": "file:com.tmg.items",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {}
+    },
     "com.tmg.sceneloader": {
       "version": "file:com.tmg.sceneloader",
       "depth": 0,
