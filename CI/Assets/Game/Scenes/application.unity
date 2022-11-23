@@ -281,8 +281,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _defaultScenes:
-  - {fileID: 11400000, guid: f4d5e8ba2fa3e43478414629ed2d5df3, type: 2}
   - {fileID: 11400000, guid: 1e6b9411c8dfb9943a8dabaca7ac310b, type: 2}
+  - {fileID: 11400000, guid: f4d5e8ba2fa3e43478414629ed2d5df3, type: 2}
 --- !u!4 &918215879
 Transform:
   m_ObjectHideFlags: 0
