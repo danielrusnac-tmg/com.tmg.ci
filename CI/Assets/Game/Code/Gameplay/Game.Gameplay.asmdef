@@ -1,12 +1,9 @@
 {
-    "name": "Game.ApplicationLifecycle",
-    "rootNamespace": "Game.ApplicationLifecycle",
+    "name": "Game.Gameplay",
+    "rootNamespace": "Game.Gameplay",
     "references": [
-        "GUID:b0214a6008ed146ff8f122a6a9c2f6cc",
-        "GUID:eea8153e0b35a4346ad27d57264a3817",
-        "GUID:32da8baf01a0c4e4587059841cece525",
         "GUID:87abf3cb3d39dcc4ebe6c4b657aa9092",
-        "GUID:b0efc3a6ba353e140a4bdbb29494214d"
+        "GUID:b0214a6008ed146ff8f122a6a9c2f6cc"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

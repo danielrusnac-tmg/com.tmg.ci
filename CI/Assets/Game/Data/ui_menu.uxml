@@ -1,0 +1,6 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:VisualElement style="position: relative; padding-left: 224px; padding-right: 224px; padding-top: 224px; padding-bottom: 224px; flex-grow: 1; justify-content: center;">
+        <ui:Button text="Restart" display-tooltip-when-elided="true" name="restart-button" />
+        <ui:Button text="Quit" display-tooltip-when-elided="true" name="quit-button" />
+    </ui:VisualElement>
+</ui:UXML>
