@@ -1,8 +1,5 @@
-using Game.Gameplay.Messages;
-using Game.Infrastructure.Game.Code.Infrastructure.PubSub;
 using UnityEngine;
 using UnityEngine.UIElements;
-using VContainer;
 
 namespace Game.Gameplay
 {
@@ -12,15 +9,6 @@ namespace Game.Gameplay
 
         private Button _restartButton;
         private Button _quitButton;
-        private IPublisher<QuitApplicationMessage> _quitMessage;
-        private IPublisher<RestartApplicationMessage> _restartMessage;
-
-        [Inject]
-        private void Construct(IPublisher<QuitApplicationMessage> quitMessage, IPublisher<RestartApplicationMessage> restartMessage)
-        {
-            _restartMessage = restartMessage;
-            _quitMessage = quitMessage;
-        }
 
         private void Awake()
         {
@@ -37,14 +25,8 @@ namespace Game.Gameplay
             _quitButton.clicked -= OnQuitPressed;
         }
 
-        private void OnQuitPressed()
-        {
-            _quitMessage.Publish(new QuitApplicationMessage());
-        }
+        private void OnQuitPressed() { }
 
-        private void OnRestartPressed()
-        {
-            _restartMessage.Publish(new RestartApplicationMessage());
-        }
+        private void OnRestartPressed() { }
     }
 }
