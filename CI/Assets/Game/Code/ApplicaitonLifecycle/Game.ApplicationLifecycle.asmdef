@@ -2,7 +2,9 @@
     "name": "Game.ApplicationLifecycle",
     "rootNamespace": "ApplicationController",
     "references": [
-        "GUID:b0214a6008ed146ff8f122a6a9c2f6cc"
+        "GUID:b0214a6008ed146ff8f122a6a9c2f6cc",
+        "GUID:eea8153e0b35a4346ad27d57264a3817",
+        "GUID:32da8baf01a0c4e4587059841cece525"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

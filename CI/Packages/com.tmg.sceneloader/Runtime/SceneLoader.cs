@@ -1,6 +1,5 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -8,24 +7,24 @@ namespace TMG.SceneLoader
 {
     public class SceneLoader : MonoBehaviour, ISceneLoader
     {
-        private HashSet<SceneAsset> _loadedScenes = new();
+        private HashSet<GameScene> _loadedScenes = new();
 
-        public bool IsLoaded(SceneAsset scene) => _loadedScenes.Contains(scene);
+        public bool IsLoaded(GameScene scene) => _loadedScenes.Contains(scene);
 
-        public IEnumerator Load(SceneAsset scene)
+        public IEnumerator Load(GameScene scene)
         {
             if (!_loadedScenes.Add(scene))
                 yield break;
-            
-            yield return SceneManager.LoadSceneAsync(scene.name, LoadSceneMode.Additive);
+
+            yield return SceneManager.LoadSceneAsync(scene.SceneName, LoadSceneMode.Additive);
         }
 
-        public IEnumerator Unload(SceneAsset scene)
+        public IEnumerator Unload(GameScene scene)
         {
             if (!_loadedScenes.Remove(scene))
                 yield break;
-            
-            yield return SceneManager.UnloadSceneAsync(scene.name);
+
+            yield return SceneManager.UnloadSceneAsync(scene.SceneName);
         }
     }
 }
