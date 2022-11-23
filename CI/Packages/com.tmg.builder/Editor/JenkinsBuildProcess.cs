@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace TMG.CI
+namespace TMG.Builder
 {
     public static class JenkinsBuildProcess
     {

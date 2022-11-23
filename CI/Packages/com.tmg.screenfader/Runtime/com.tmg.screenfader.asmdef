@@ -1,10 +1,8 @@
 {
-    "name": "com.tmg.ci.editor",
-    "rootNamespace": "TMG.CI",
+    "name": "TMG.ScreenFader",
+    "rootNamespace": "TMG.ScreenFader",
     "references": [],
-    "includePlatforms": [
-        "Editor"
-    ],
+    "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
     "overrideReferences": false,

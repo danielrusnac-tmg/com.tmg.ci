@@ -1,7 +1,19 @@
 {
   "dependencies": {
-    "com.tmg.ci": {
-      "version": "file:com.tmg.ci",
+    "com.tmg.builder": {
+      "version": "file:com.tmg.builder",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {}
+    },
+    "com.tmg.sceneloader": {
+      "version": "file:com.tmg.sceneloader",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {}
+    },
+    "com.tmg.screenfader": {
+      "version": "file:com.tmg.screenfader",
       "depth": 0,
       "source": "embedded",
       "dependencies": {}

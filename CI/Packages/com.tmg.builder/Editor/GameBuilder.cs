@@ -1,6 +1,6 @@
 ﻿using UnityEditor;
 
-namespace TMG.CI
+namespace TMG.Builder
 {
     public static class GameBuilder
     {
