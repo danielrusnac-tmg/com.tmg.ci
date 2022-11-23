@@ -2,10 +2,5 @@
   "name": "com.tmg.ci",
   "version": "0.1.0",
   "displayName": "CI",
-  "description": "Continues Integration (CI) pipeline for Unity.",
-  "author": 
-  {
-    "name": "Daniel Rusnac",
-    "email": "daniel.rusnac@trymygames.com"
-  }
+  "description": "Continues Integration (CI) pipeline for Unity."
 }
