@@ -1,10 +1,9 @@
 {
-    "name": "Game.ApplicationLifecycle",
-    "rootNamespace": "Game.ApplicationLifecycle",
+    "name": "Game.Application.States",
+    "rootNamespace": "Game.Application.States",
     "references": [
         "GUID:b0214a6008ed146ff8f122a6a9c2f6cc",
-        "GUID:eea8153e0b35a4346ad27d57264a3817",
-        "GUID:32da8baf01a0c4e4587059841cece525"
+        "GUID:14af624c24e3c7646ad45e4eefb2b3d0"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

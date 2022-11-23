@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 using VContainer;
 using VContainer.Unity;
 
-namespace Game.ApplicationLifecycle
+namespace Game.Application
 {
     public class ApplicationController : LifetimeScope
     {
@@ -44,8 +44,8 @@ namespace Game.ApplicationLifecycle
             StartCoroutine(RestartRoutine());
         }
 
-        [ContextMenu(nameof(Exit))]
-        public void Exit()
+        [ContextMenu(nameof(Quit))]
+        public void Quit()
         {
 #if UNITY_EDITOR
             EditorApplication.isPlaying = false;
