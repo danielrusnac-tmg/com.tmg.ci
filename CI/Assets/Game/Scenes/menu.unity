@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 1687494307}
   - component: {fileID: 1687494308}
   m_Layer: 0
-  m_Name: scope
+  m_Name: menu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

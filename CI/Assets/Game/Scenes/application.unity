@@ -283,8 +283,7 @@ MonoBehaviour:
   parentReference:
     TypeName: 
   autoRun: 1
-  autoInjectGameObjects:
-  - {fileID: 918215877}
+  autoInjectGameObjects: []
   _sceneLoader: {fileID: 357109317}
   _screenFader: {fileID: 1042831937}
   _defaultScenes:

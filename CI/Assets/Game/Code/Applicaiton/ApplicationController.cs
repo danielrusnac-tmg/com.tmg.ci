@@ -16,7 +16,7 @@ namespace Game.Application
         [SerializeField] private GameScene[] _defaultScenes;
 
         private bool _isRestarting;
-        
+
         protected override void Configure(IContainerBuilder builder)
         {
             base.Configure(builder);
