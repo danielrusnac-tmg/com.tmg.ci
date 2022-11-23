@@ -2,5 +2,5 @@
   "name": "com.tmg.ci",
   "version": "0.1.0",
   "displayName": "CI",
-  "description": "Continues Integration (CI) pipeline for Unity."
+  "description": "Continues Integration pipeline for Unity."
 }
