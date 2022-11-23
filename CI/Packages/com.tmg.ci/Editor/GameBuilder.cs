@@ -5,31 +5,22 @@ namespace Tmg.CI
 {
     public static class GameBuilder
     {
-        public static void BuildInBatchMode()
+        public static void BuildWithArgumentsAndExit()
         {
-            Build(GetBuildDataFromArguments());
+            Build(BuildMode.Parse(Environment.GetCommandLineArgs()));
             EditorApplication.Exit(0);
         }
 
-        private static void Build(BuildData data)
+        public static void Build(BuildMode mode)
         {
-            ApplyBuildSettings(SettingsProvider.LoadSettings().GetBuildMode(data.BuildMode));
+            ApplyBuildSettings(mode);
+            
+            // build
         }
 
-        private static void ApplyBuildSettings(BuildMode getBuildMode)
+        private static void ApplyBuildSettings(BuildMode mode)
         {
-            throw new NotImplementedException();
-        }
-
-        private static BuildData GetBuildDataFromArguments()
-        {
-            string[] args = Environment.GetCommandLineArgs();
-            return new BuildData();
-        }
-
-        private struct BuildData
-        {
-            public int BuildMode;
+            string defines = PlayerSettings.GetScriptingDefineSymbolsForGroup(EditorUserBuildSettings.selectedBuildTargetGroup);
         }
     }
 }

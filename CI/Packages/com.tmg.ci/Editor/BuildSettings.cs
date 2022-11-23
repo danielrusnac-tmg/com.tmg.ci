@@ -2,17 +2,15 @@
 
 namespace Tmg.CI
 {
-    [CreateAssetMenu(menuName = "CI/CI Settings", fileName = "ci_")]
+    [CreateAssetMenu(menuName = "CI/Build Settings", fileName = "build_")]
     public class BuildSettings : ScriptableObject
     {
-        [SerializeField] private BuildMode[] _modes;
+        [SerializeField] private BuildMode _mode = BuildMode.Default;
 
-        public BuildMode GetBuildMode(int index)
+        [ContextMenu(nameof(Build))]
+        public void Build()
         {
-            if (index < 0 || index >= _modes.Length)
-                return BuildMode.Default;
-
-            return _modes[index];
+            GameBuilder.Build(_mode);
         }
     }
 }

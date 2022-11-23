@@ -1,12 +1,13 @@
 ﻿using System;
+using UnityEditor;
 
 namespace Tmg.CI
 {
     [Serializable]
     public struct BuildMode
     {
-        public string Name;
-        public string Preprocessor;
+        public string DefineSymbols;
+        public BuildTargetGroup TargetGroup;
         public bool ShowSplashScreen;
         public bool IsDevelopment;
         public bool CheatsEnabled;
@@ -14,12 +15,17 @@ namespace Tmg.CI
 
         public static BuildMode Default = new()
         {
-            Name = "Default", 
-            Preprocessor = "",
+            DefineSymbols = "",
+            TargetGroup = BuildTargetGroup.Android,
             ShowSplashScreen = false,
             IsDevelopment = false,
             CheatsEnabled = false,
             IncludeSdks = true
         };
+
+        public static BuildMode Parse(string[] args)
+        {
+            return Default;
+        }
     }
 }

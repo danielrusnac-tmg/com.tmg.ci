@@ -1,10 +1,12 @@
-﻿namespace Tmg.CI
+﻿using UnityEditor.Experimental;
+
+namespace Tmg.CI
 {
     internal static class SettingsProvider
     {
-        public static BuildSettings LoadSettings()
+        public static BuildSettings LoadSettings(string name)
         {
-            return null;
+            return EditorResources.Load<BuildSettings>($"Builds/{name}");
         }
     }
 }

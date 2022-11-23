@@ -10,24 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 49284a16be7c4b29979f86ec64f1aa4c, type: 3}
-  m_Name: ci_settings
+  m_Name: build_production
   m_EditorClassIdentifier: 
-  _modes:
-  - Name: Development
-    Preprocessor: TMG_DEVELOPMENT
-    ShowSplashScreen: 0
-    IsDevelopment: 1
-    CheatsEnabled: 1
-    IncludeSdks: 0
-  - Name: Production
-    Preprocessor: TMG_PRODUCTION
+  _mode:
+    DefineSymbols: TMG_PRODUCTION
+    TargetGroup: 7
     ShowSplashScreen: 0
     IsDevelopment: 0
     CheatsEnabled: 1
-    IncludeSdks: 1
-  - Name: Release
-    Preprocessor: TMG_RELEASE
-    ShowSplashScreen: 0
-    IsDevelopment: 0
-    CheatsEnabled: 0
     IncludeSdks: 1
