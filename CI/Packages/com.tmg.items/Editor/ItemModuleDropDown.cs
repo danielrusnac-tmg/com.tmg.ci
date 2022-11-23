@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Reflection;
 using UnityEditor;
 using UnityEditor.IMGUI.Controls;
 using UnityEngine;
@@ -17,12 +19,16 @@ namespace TMG.Items
 
         protected override AdvancedDropdownItem BuildRoot()
         {
-            var root = new AdvancedDropdownItem("Modules");
-
+            AdvancedDropdownItem root = new AdvancedDropdownItem("Modules");
             TypeCache.TypeCollection moduleTypes = TypeCache.GetTypesDerivedFrom<ItemModule>();
 
             foreach (Type moduleType in moduleTypes)
-                root.AddChild(new ItemModuleDropdownItem(moduleType));
+            {
+                if (moduleType.IsAbstract && moduleType.IsGenericType)
+                    continue;
+                
+                root.AddChild(new ItemModuleDropdownItem(moduleType.Name.Replace("ItemModule", ""), moduleType));
+            }
 
             return root;
         }

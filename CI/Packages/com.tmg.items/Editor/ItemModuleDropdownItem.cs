@@ -7,7 +7,7 @@ namespace TMG.Items
     {
         public Type Type { get; }
 
-        public ItemModuleDropdownItem(Type type) : base(type.Name.Replace("ItemModule", ""))
+        public ItemModuleDropdownItem(string name, Type type) : base(name)
         {
             Type = type;
         }
