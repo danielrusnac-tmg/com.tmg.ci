@@ -1,33 +1,31 @@
-using System.Threading.Tasks;
-using VContainer;
-using VContainer.Unity;
+using System.Collections;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
 
 namespace ApplicationController
 {
-    public class ApplicationController : LifetimeScope
+    public class ApplicationController : MonoBehaviour
     {
-        protected override async void Configure(IContainerBuilder builder)
+        private IEnumerator Start()
         {
-            base.Configure(builder);
-
-            await InitializeServices();
-            LoadGameplay();
+            yield return SceneManager.LoadSceneAsync("services", LoadSceneMode.Additive);
+            yield return SceneManager.LoadSceneAsync("menu", LoadSceneMode.Additive);
         }
 
-        private async Task InitializeServices()
+        [ContextMenu(nameof(Restart))]
+        public void Restart()
         {
-            
+            SceneManager.LoadScene("boot");
         }
 
-        private void LoadGameplay()
-        {
-            
-        }
-
+        [ContextMenu(nameof(Exit))]
         public void Exit()
         {
 #if UNITY_EDITOR
-            UnityEditor.EditorApplication.isPlaying = false;
+            EditorApplication.isPlaying = false;
 #else
             Application.Quit();
 #endif
