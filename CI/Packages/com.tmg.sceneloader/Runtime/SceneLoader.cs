@@ -8,7 +8,7 @@ namespace TMG.SceneLoader
 {
     public class SceneLoader : MonoBehaviour, ISceneLoader
     {
-        private HashSet<GameScene> _loadedScenes = new();
+        private HashSet<GameScene> _loadedScenes = new HashSet<GameScene>();
 
         public bool IsLoaded(GameScene scene) => _loadedScenes.Contains(scene);
 

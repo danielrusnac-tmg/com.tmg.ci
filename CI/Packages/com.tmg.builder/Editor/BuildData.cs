@@ -15,7 +15,7 @@ namespace TMG.Builder
 
         public static BuildData Parse(string[] args)
         {
-            BuildData data = new();
+            BuildData data = new BuildData();
 
             data.BuildPath = args[7];
             Enum.TryParse(args[8], true, out data.BuildTarget);
@@ -37,7 +37,7 @@ namespace TMG.Builder
             BuildPlayerOptions playerSettings =
                 BuildPlayerWindow.DefaultBuildMethods.GetBuildPlayerOptions(new BuildPlayerOptions());
 
-            BuildData data = new()
+            BuildData data = new BuildData()
             {
                 BuildPath = playerSettings.locationPathName,
                 BuildNumber = "",

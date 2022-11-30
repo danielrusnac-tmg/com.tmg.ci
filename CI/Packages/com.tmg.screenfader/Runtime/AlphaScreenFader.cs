@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using UnityEngine;
 
 namespace TMG.ScreenFader
@@ -12,6 +13,12 @@ namespace TMG.ScreenFader
         [SerializeField] private AnimationCurve _hideCurtainEase = AnimationCurve.EaseInOut(0f, 0f, 1f, 1f);
 
         public bool IsCurtainShown { get; private set; }
+
+        private void Reset()
+        {
+            _canvasGroup = GetComponent<CanvasGroup>();
+            _canvas = GetComponent<Canvas>();
+        }
 
         private void Awake()
         {
