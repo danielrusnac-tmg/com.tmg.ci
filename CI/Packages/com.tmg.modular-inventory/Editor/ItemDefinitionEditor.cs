@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using UnityEditor;
-using UnityEditor.UIElements;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-namespace FoggyWoods.Inventories
+namespace TMG.ModularInventory
 {
     [CustomEditor(typeof(ItemDefinition))]
     public class ItemDefinitionEditor : Editor

@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-namespace FoggyWoods.Inventories.UI
+namespace TMG.ModularInventory.UI
 {
     public class InventoryDisplay : MonoBehaviour
     {

@@ -3,7 +3,7 @@ using UnityEditor;
 using UnityEditor.IMGUI.Controls;
 using UnityEngine;
 
-namespace FoggyWoods.Inventories
+namespace TMG.ModularInventory
 {
     internal class ItemPropertiesDropDown : AdvancedDropdown
     {

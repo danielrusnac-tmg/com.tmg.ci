@@ -1,8 +1,7 @@
-﻿using System;
-using TMPro;
+﻿using TMPro;
 using UnityEngine;
 
-namespace FoggyWoods.Inventories.UI
+namespace TMG.ModularInventory.UI
 {
     public class SlotDisplay : MonoBehaviour
     {

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace FoggyWoods.Inventories
+namespace TMG.ModularInventory
 {
     [Serializable]
     public struct ItemChangedData

@@ -1,4 +1,4 @@
-namespace FoggyWoods.Inventories
+namespace TMG.ModularInventory
 {
     public interface IItem
     {

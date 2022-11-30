@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-namespace FoggyWoods.Inventories
+namespace TMG.ModularInventory
 {
     public class Inventory : IInventory
     {

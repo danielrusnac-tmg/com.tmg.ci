@@ -1,6 +1,6 @@
 ﻿using System.Linq;
 
-namespace FoggyWoods.Inventories
+namespace TMG.ModularInventory
 {
     public static class InventoryExtensions
     {

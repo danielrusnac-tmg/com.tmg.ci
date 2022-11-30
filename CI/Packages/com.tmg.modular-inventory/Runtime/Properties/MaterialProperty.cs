@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace FoggyWoods.Inventories.Properties
+namespace TMG.ModularInventory.Properties
 {
     public class MaterialProperty : ItemProperty<Material> { }
 }

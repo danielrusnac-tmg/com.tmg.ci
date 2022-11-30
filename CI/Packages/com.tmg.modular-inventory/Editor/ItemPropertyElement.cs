@@ -4,7 +4,7 @@ using UnityEditor.UIElements;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-namespace FoggyWoods.Inventories
+namespace TMG.ModularInventory
 {
     public class ItemPropertyElement : VisualElement
     {

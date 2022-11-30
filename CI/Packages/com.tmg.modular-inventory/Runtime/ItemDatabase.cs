@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace FoggyWoods.Inventories
+namespace TMG.ModularInventory
 {
     public class ItemDatabase : IItemDatabase
     {

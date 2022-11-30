@@ -1,9 +1,7 @@
-﻿using UnityEngine;
-#if UNITY_EDITOR
-using UnityEditor;
-#endif
+﻿using UnityEditor;
+using UnityEngine;
 
-namespace FoggyWoods.Inventories.Properties
+namespace TMG.ModularInventory.Properties
 {
     public abstract class ItemProperty<T> : ScriptableObject, IItemProperty
     {

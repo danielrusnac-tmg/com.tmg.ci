@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Assertions;
 using UnityEngine.UIElements;
 
-namespace FoggyWoods.Inventories
+namespace TMG.ModularInventory
 {
     public class ResourcesProvider
     {

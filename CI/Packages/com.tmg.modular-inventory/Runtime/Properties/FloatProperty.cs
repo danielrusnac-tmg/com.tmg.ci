@@ -1,4 +1,4 @@
-﻿namespace FoggyWoods.Inventories.Properties
+﻿namespace TMG.ModularInventory.Properties
 {
     public class FloatProperty : ItemProperty<float> { }
 }

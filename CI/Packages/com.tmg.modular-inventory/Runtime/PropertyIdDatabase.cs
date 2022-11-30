@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-namespace FoggyWoods.Inventories
+namespace TMG.ModularInventory
 {
     [CreateAssetMenu(menuName = "Inventories/Property ID Database", fileName = "propertyIdDatabase")]
     public class PropertyIdDatabase : ScriptableObject, ISerializationCallbackReceiver
