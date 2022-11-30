@@ -6,20 +6,20 @@ using UnityEngine.UIElements;
 
 namespace TMG.ModularInventory
 {
-    public class ResourcesProvider
+    internal static class ResourcesProvider
     {
         internal static VisualTreeAsset ItemDefinitionUxml { get; }
         internal static VisualTreeAsset ItemModuleUxml { get; }
         
         static ResourcesProvider()
         {
-            ItemDefinitionUxml = LoadAssetRelativeToScript<ResourcesProvider, VisualTreeAsset>("UI/ItemDefinitionUxml.uxml");
-            ItemModuleUxml = LoadAssetRelativeToScript<ResourcesProvider, VisualTreeAsset>("UI/ItemModuleUxml.uxml");
+            ItemDefinitionUxml = LoadAssetRelativeToScript<VisualTreeAsset>("UI/ItemDefinitionUxml.uxml");
+            ItemModuleUxml = LoadAssetRelativeToScript<VisualTreeAsset>("UI/ItemModuleUxml.uxml");
         }
 
-        private static string GetScriptParentDirectory<T>()
+        private static string GetScriptParentDirectory()
         {
-            string[] guids = AssetDatabase.FindAssets($"t: Script ResourcesProvider");
+            string[] guids = AssetDatabase.FindAssets("t: Script ResourcesProvider");
 
             Assert.IsNotNull(guids);
             Assert.IsTrue(guids.Length > 0);
@@ -28,9 +28,9 @@ namespace TMG.ModularInventory
             return Path.GetDirectoryName(relativePath);
         }
 
-        private static TAsset LoadAssetRelativeToScript<TScript, TAsset>(string relativePath) where TAsset : Object
+        private static TAsset LoadAssetRelativeToScript<TAsset>(string relativePath) where TAsset : Object
         {
-            string path = GetScriptParentDirectory<TScript>();
+            string path = GetScriptParentDirectory();
             path = Path.Combine(path, relativePath);
             return AssetDatabase.LoadAssetAtPath<TAsset>(path);
         }
