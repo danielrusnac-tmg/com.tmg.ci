@@ -2,5 +2,5 @@
 
 namespace TMG.ModularInventory.Properties
 {
-    public class SpriteProperty : ItemProperty<Sprite> { }
+    public class LayerMaskProperty : ItemModule<LayerMask> { }
 }

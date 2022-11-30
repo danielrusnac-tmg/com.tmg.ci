@@ -6,16 +6,16 @@ using UnityEngine.UIElements;
 
 namespace TMG.ModularInventory
 {
-    public class ItemPropertyElement : VisualElement
+    public class ItemModuleElement : VisualElement
     {
         private Action<ScriptableObject> _onRemove;
         private ScriptableObject _propertyObject;
 
-        public ItemPropertyElement(ScriptableObject propertyObject, Action<ScriptableObject> onRemove)
+        public ItemModuleElement(ScriptableObject propertyObject, Action<ScriptableObject> onRemove)
         {
             _propertyObject = propertyObject;
             _onRemove = onRemove;
-            TemplateContainer propertyElement = ResourcesProvider.ItemPropertyUxml.Instantiate();
+            TemplateContainer propertyElement = ResourcesProvider.ItemModuleUxml.Instantiate();
             Add(propertyElement);
             propertyElement.Bind(new SerializedObject(propertyObject));
             

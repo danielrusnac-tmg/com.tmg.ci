@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace TMG.ModularInventory.Properties
 {
-    public abstract class ItemProperty<T> : ScriptableObject, IItemProperty
+    public abstract class ItemModule<T> : ScriptableObject, IItemModule
     {
         [SerializeField] private string _key;
         [SerializeField] private T _value;

@@ -72,7 +72,7 @@ namespace TMG.ModularInventory
 
                 foreach (ScriptableObject property in _item.Properties)
                 {
-                    _content.Add(new ItemPropertyElement(property, RemoveProperty));
+                    _content.Add(new ItemModuleElement(property, RemoveProperty));
                     // _content.Add(new InspectorElement(property));
                 }        
         }

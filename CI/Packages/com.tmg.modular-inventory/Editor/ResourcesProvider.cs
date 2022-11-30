@@ -9,12 +9,12 @@ namespace TMG.ModularInventory
     public class ResourcesProvider
     {
         internal static VisualTreeAsset ItemDefinitionUxml { get; }
-        internal static VisualTreeAsset ItemPropertyUxml { get; }
+        internal static VisualTreeAsset ItemModuleUxml { get; }
         
         static ResourcesProvider()
         {
             ItemDefinitionUxml = LoadAssetRelativeToScript<ResourcesProvider, VisualTreeAsset>("UI/ItemDefinitionUxml.uxml");
-            ItemPropertyUxml = LoadAssetRelativeToScript<ResourcesProvider, VisualTreeAsset>("UI/ItemPropertyUxml.uxml");
+            ItemModuleUxml = LoadAssetRelativeToScript<ResourcesProvider, VisualTreeAsset>("UI/ItemModuleUxml.uxml");
         }
 
         private static string GetScriptParentDirectory<T>()

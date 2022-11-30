@@ -12,26 +12,26 @@ namespace TMG.ModularInventory
 
         public string ID => name;
 
-        public T GetProperty<T>(string key)
+        public T GetModule<T>(string key)
         {
-            TryGetProperty(key, out T property);
+            TryGetModule(key, out T property);
             return property;
         }
 
-        public bool TryGetProperty<T>(string key, out T property)
+        public bool TryGetModule<T>(string key, out T module)
         {
             foreach (ScriptableObject so in Properties)
             {
-                if (so is IItemProperty itemProperty &&
-                    string.Equals(itemProperty.Key, key) &&
-                    itemProperty.Value is T castedProperty)
+                if (so is IItemModule ItemModule &&
+                    string.Equals(ItemModule.Key, key) &&
+                    ItemModule.Value is T castedProperty)
                 {
-                    property = castedProperty;
+                    module = castedProperty;
                     return true;
                 }
             }
 
-            property = default;
+            module = default;
             return false;
         }
     }

@@ -1,6 +1,6 @@
 ﻿namespace TMG.ModularInventory
 {
-    public interface IItemProperty
+    public interface IItemModule
     {
         string Key { get; }
         object Value { get; }

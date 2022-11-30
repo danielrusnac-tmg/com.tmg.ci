@@ -9,7 +9,7 @@ namespace TMG.ModularInventory.UI
 
         public void Display(IItem item)
         {
-            _icon.sprite = item.GetProperty<Sprite>("icon");
+            _icon.sprite = item.GetModule<Sprite>("icon");
         }
     }
 }

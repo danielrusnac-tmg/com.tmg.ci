@@ -4,7 +4,7 @@ namespace TMG.ModularInventory
     {
         string ID { get; }
 
-        T GetProperty<T>(string key);
-        bool TryGetProperty<T>(string key, out T property);
+        T GetModule<T>(string key);
+        bool TryGetModule<T>(string key, out T module);
     }
 }

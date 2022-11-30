@@ -2,5 +2,5 @@
 
 namespace TMG.ModularInventory.Properties
 {
-    public class GameObjectProperty : ItemProperty<GameObject> { }
+    public class SpriteProperty : ItemModule<Sprite> { }
 }

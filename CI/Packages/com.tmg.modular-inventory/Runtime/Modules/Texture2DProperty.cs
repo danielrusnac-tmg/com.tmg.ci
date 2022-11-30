@@ -2,5 +2,5 @@
 
 namespace TMG.ModularInventory.Properties
 {
-    public class MaterialProperty : ItemProperty<Material> { }
+    public class Texture2DProperty : ItemModule<Texture2D> { }
 }

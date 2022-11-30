@@ -18,14 +18,14 @@ namespace TMG.ModularInventory
         protected override AdvancedDropdownItem BuildRoot()
         {
             AdvancedDropdownItem root = new AdvancedDropdownItem("Properties");
-            TypeCache.TypeCollection propertyTypes = TypeCache.GetTypesDerivedFrom<IItemProperty>();
+            TypeCache.TypeCollection propertyTypes = TypeCache.GetTypesDerivedFrom<IItemModule>();
 
             foreach (Type type in propertyTypes)
             {
                 if (!type.IsClass || type.IsAbstract && type.IsGenericType)
                     continue;
                 
-                root.AddChild(new ItemPropertyDropdownItem(type.Name.Replace("Property", ""), type));
+                root.AddChild(new ItemModuleDropdownItem(type.Name.Replace("Property", ""), type));
             }
 
             return root;
@@ -35,7 +35,7 @@ namespace TMG.ModularInventory
         {
             base.ItemSelected(item);
 
-            if (item is ItemPropertyDropdownItem dropdownItem)
+            if (item is ItemModuleDropdownItem dropdownItem)
                 _onSelected?.Invoke(dropdownItem.Type);
         }
     }

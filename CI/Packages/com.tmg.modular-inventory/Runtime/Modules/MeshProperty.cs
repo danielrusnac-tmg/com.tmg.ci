@@ -2,5 +2,5 @@
 
 namespace TMG.ModularInventory.Properties
 {
-    public class MeshProperty : ItemProperty<Mesh> { }
+    public class MeshProperty : ItemModule<Mesh> { }
 }

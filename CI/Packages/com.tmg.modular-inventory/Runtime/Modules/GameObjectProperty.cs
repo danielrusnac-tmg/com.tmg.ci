@@ -2,5 +2,5 @@
 
 namespace TMG.ModularInventory.Properties
 {
-    public class ColorProperty : ItemProperty<Color> { }
+    public class GameObjectProperty : ItemModule<GameObject> { }
 }
