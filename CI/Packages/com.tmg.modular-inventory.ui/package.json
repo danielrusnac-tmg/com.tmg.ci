@@ -1,0 +1,9 @@
+{
+  "name": "com.tmg.modular-inventory.ui",
+  "version": "0.1.0",
+  "displayName": "Modular Inventory UI",
+  "description": "UI elements for inventories, slots and items.",
+  "dependencies": {
+    "com.tmg.modular-inventory": "0.1.0"
+  }
+}

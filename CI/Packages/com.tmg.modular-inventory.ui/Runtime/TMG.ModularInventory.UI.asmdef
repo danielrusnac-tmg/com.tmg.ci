@@ -1,8 +1,8 @@
 {
-    "name": "FoggyWoods.Inventories.UI",
-    "rootNamespace": "FoggyWoods.Inventories.UI",
+    "name": "TMG.ModularInventory.UI",
+    "rootNamespace": "TMG.ModularInventory.UI",
     "references": [
-        "FoggyWoods.Inventories",
+        "TMG.ModularInventory",
         "Unity.TextMeshPro"
     ],
     "includePlatforms": [],

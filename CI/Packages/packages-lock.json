@@ -1,24 +1,24 @@
 {
   "dependencies": {
-    "com.foggywoods.inventories": {
-      "version": "file:com.foggywoods.inventories",
-      "depth": 0,
-      "source": "embedded",
-      "dependencies": {}
-    },
-    "com.foggywoods.inventories.ui": {
-      "version": "file:com.foggywoods.inventories.ui",
-      "depth": 0,
-      "source": "embedded",
-      "dependencies": {
-        "com.foggywoods.inventories": "3.0.0"
-      }
-    },
     "com.tmg.builder": {
       "version": "file:com.tmg.builder",
       "depth": 0,
       "source": "embedded",
       "dependencies": {}
+    },
+    "com.tmg.modular-inventory": {
+      "version": "file:com.tmg.modular-inventory",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {}
+    },
+    "com.tmg.modular-inventory.ui": {
+      "version": "file:com.tmg.modular-inventory.ui",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {
+        "com.tmg.modular-inventory": "0.1.0"
+      }
     },
     "com.tmg.sceneloader": {
       "version": "file:com.tmg.sceneloader",

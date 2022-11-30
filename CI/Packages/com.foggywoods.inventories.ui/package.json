@@ -1,9 +1,0 @@
-{
-  "name": "com.foggywoods.inventories.ui",
-  "version": "1.0.0",
-  "displayName": "Inventories UI",
-  "description": "UI elements for inventories, slots and items.",
-  "dependencies": {
-    "com.foggywoods.inventories": "3.0.0"
-  }
-}

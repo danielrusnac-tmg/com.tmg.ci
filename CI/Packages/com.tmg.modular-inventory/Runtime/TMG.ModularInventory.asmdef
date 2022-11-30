@@ -1,12 +1,8 @@
 {
-    "name": "FoggyWoods.Inventories.Editor",
-    "rootNamespace": "FoggyWoods.Inventories",
-    "references": [
-        "FoggyWoods.Inventories"
-    ],
-    "includePlatforms": [
-        "Editor"
-    ],
+    "name": "TMG.ModularInventory",
+    "rootNamespace": "TMG.ModularInventory",
+    "references": [],
+    "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
     "overrideReferences": false,

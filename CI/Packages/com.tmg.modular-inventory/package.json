@@ -1,0 +1,6 @@
+{
+  "name": "com.tmg.modular-inventory",
+  "version": "0.1.0",
+  "displayName": "Modular Inventory",
+  "description": "An inventory system that treats items as containers with modules."
+}
