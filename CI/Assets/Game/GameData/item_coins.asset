@@ -12,34 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35e16f1bf1933be4bb1175d75ded7d6c, type: 3}
   m_Name: item_coins
   m_EditorClassIdentifier: 
-  _properties:
-  - {fileID: 3980993406019144346}
-  - {fileID: 2295524161944322093}
---- !u!114 &2295524161944322093
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 99cf153280ac4baf90ee8a275b976a8a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _key: 
-  _value: 0
---- !u!114 &3980993406019144346
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9717458fa9bb4c159b76dc252c9cffb3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _key: 
-  _value: {fileID: 0}
+  _modules: []

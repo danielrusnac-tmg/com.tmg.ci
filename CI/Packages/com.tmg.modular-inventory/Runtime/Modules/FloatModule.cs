@@ -1,4 +1,4 @@
-﻿namespace TMG.ModularInventory.Properties
+﻿namespace TMG.ModularInventory.Modules
 {
     public class FloatModule : ItemModule<float> { }
 }

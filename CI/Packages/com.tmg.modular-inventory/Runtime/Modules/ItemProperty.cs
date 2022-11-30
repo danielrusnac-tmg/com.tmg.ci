@@ -1,7 +1,7 @@
 ﻿using UnityEditor;
 using UnityEngine;
 
-namespace TMG.ModularInventory.Properties
+namespace TMG.ModularInventory.Modules
 {
     public abstract class ItemModule<T> : ScriptableObject, IItemModule
     {
