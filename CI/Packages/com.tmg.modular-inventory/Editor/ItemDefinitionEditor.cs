@@ -27,7 +27,8 @@ namespace TMG.ModularInventory
             root.Q<Label>("id").text = _item.ID;
             root.Q<Button>("add-button").clicked += OnAddModuleClicked;
 
-            RefreshModuleElements();
+            foreach (ScriptableObject module in _item.Modules)
+                AddModuleElement(module);
             
             return root;
         }
@@ -43,38 +44,42 @@ namespace TMG.ModularInventory
         {
             AddModule(CreateInstance(type));
         }
-        private void AddModule(ScriptableObject property)
+        private void AddModule(ScriptableObject module)
         {
-            _item.Modules.Add(property);
-            AssetDatabase.AddObjectToAsset(property, _item);
+            _item.Modules.Add(module);
+            
+            AssetDatabase.AddObjectToAsset(module, _item);
             EditorUtility.SetDirty(_item);
             AssetDatabase.SaveAssetIfDirty(_item);
-
-            // RefreshProperties();
+            
+            AddModuleElement(module);
         }
 
-        private void RemoveProperty(ScriptableObject property)
+        private void RemoveModule(ScriptableObject module)
         {
-            _item.Modules.Remove(property);
-            AssetDatabase.RemoveObjectFromAsset(property);
+            RemoveModuleElement(module);
+            _item.Modules.Remove(module);
+
+            AssetDatabase.RemoveObjectFromAsset(module);
             EditorUtility.SetDirty(_item);
             AssetDatabase.SaveAssetIfDirty(_item);
-
-            // RefreshProperties();
         }
 
-        private void RefreshModuleElements()
+        private void AddModuleElement(ScriptableObject module)
         {
-            // int childCount = _content.childCount;
+            ItemModuleElement element = new ItemModuleElement(module, RemoveModule);
 
-            // for (int i = childCount - 1; i >= 0; i--)
-                // _content.RemoveAt(i);
-
-                foreach (ScriptableObject module in _item.Modules)
-                {
-                    _content.Add(new ItemModuleElement(module, RemoveProperty));
-                    // _content.Add(new InspectorElement(property));
-                }        
+            _elementByModule.Add(module, element);
+            _content.Add(element);
+        }
+        
+        private void RemoveModuleElement(ScriptableObject module)
+        {
+            if (!_elementByModule.ContainsKey(module))
+                return;
+            
+            _content.Remove(_elementByModule[module]);
+            _elementByModule.Remove(module);
         }
     }
 }
