@@ -2,5 +2,5 @@
 
 namespace TMG.ModularInventory.Properties
 {
-    public class AnimatorProperty : ItemModule<Animator> { }
+    public class Texture2DModule : ItemModule<Texture2D> { }
 }

@@ -11,7 +11,7 @@ namespace TMG.ModularInventory
     {
         private ItemDefinition _item;
         private VisualElement _content;
-        private Dictionary<ScriptableObject, VisualElement> _elementByProperty = new Dictionary<ScriptableObject, VisualElement>();
+        private Dictionary<ScriptableObject, VisualElement> _elementByModule = new Dictionary<ScriptableObject, VisualElement>();
 
         private void OnEnable()
         {
@@ -25,27 +25,27 @@ namespace TMG.ModularInventory
 
             _content = root.Q<VisualElement>("content");
             root.Q<Label>("id").text = _item.ID;
-            root.Q<Button>("add-button").clicked += OnAddPropertyClicked;
+            root.Q<Button>("add-button").clicked += OnAddModuleClicked;
 
-            RefreshProperties();
+            RefreshModuleElements();
             
             return root;
         }
 
-        private void OnAddPropertyClicked()
+        private void OnAddModuleClicked()
         {
             Rect rect = new Rect(Event.current.mousePosition, new Vector2(0, 0));
-            ItemPropertiesDropDown dropdown = new ItemPropertiesDropDown(AddProperty);
+            ItemModulesDropDown dropdown = new ItemModulesDropDown(AddModule);
             dropdown.Show(rect);
         }
 
-        private void AddProperty(Type type)
+        private void AddModule(Type type)
         {
-            AddProperty(CreateInstance(type));
+            AddModule(CreateInstance(type));
         }
-        private void AddProperty(ScriptableObject property)
+        private void AddModule(ScriptableObject property)
         {
-            _item.Properties.Add(property);
+            _item.Modules.Add(property);
             AssetDatabase.AddObjectToAsset(property, _item);
             EditorUtility.SetDirty(_item);
             AssetDatabase.SaveAssetIfDirty(_item);
@@ -55,7 +55,7 @@ namespace TMG.ModularInventory
 
         private void RemoveProperty(ScriptableObject property)
         {
-            _item.Properties.Remove(property);
+            _item.Modules.Remove(property);
             AssetDatabase.RemoveObjectFromAsset(property);
             EditorUtility.SetDirty(_item);
             AssetDatabase.SaveAssetIfDirty(_item);
@@ -63,16 +63,16 @@ namespace TMG.ModularInventory
             // RefreshProperties();
         }
 
-        private void RefreshProperties()
+        private void RefreshModuleElements()
         {
             // int childCount = _content.childCount;
 
             // for (int i = childCount - 1; i >= 0; i--)
                 // _content.RemoveAt(i);
 
-                foreach (ScriptableObject property in _item.Properties)
+                foreach (ScriptableObject module in _item.Modules)
                 {
-                    _content.Add(new ItemModuleElement(property, RemoveProperty));
+                    _content.Add(new ItemModuleElement(module, RemoveProperty));
                     // _content.Add(new InspectorElement(property));
                 }        
         }

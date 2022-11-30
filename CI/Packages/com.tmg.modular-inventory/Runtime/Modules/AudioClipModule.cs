@@ -2,5 +2,5 @@
 
 namespace TMG.ModularInventory.Properties
 {
-    public class GameObjectProperty : ItemModule<GameObject> { }
+    public class AudioClipModule : ItemModule<AudioClip> { }
 }

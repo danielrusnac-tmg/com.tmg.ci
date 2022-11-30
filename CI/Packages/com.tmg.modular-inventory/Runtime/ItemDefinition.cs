@@ -6,9 +6,9 @@ namespace TMG.ModularInventory
     [CreateAssetMenu(menuName = "Inventories/Item", fileName = "item_")]
     public class ItemDefinition : ScriptableObject, IItem
     {
-        [SerializeField] private List<ScriptableObject> _properties = new List<ScriptableObject>();
+        [SerializeField] private List<ScriptableObject> _modules = new List<ScriptableObject>();
 
-        public List<ScriptableObject> Properties => _properties;
+        public List<ScriptableObject> Modules => _modules;
 
         public string ID => name;
 
@@ -20,13 +20,13 @@ namespace TMG.ModularInventory
 
         public bool TryGetModule<T>(string key, out T module)
         {
-            foreach (ScriptableObject so in Properties)
+            foreach (ScriptableObject soModule in Modules)
             {
-                if (so is IItemModule ItemModule &&
-                    string.Equals(ItemModule.Key, key) &&
-                    ItemModule.Value is T castedProperty)
+                if (soModule is IItemModule itemModule &&
+                    string.Equals(itemModule.Key, key) &&
+                    itemModule.Value is T castedModule)
                 {
-                    module = castedProperty;
+                    module = castedModule;
                     return true;
                 }
             }

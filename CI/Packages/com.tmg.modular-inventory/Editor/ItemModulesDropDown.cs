@@ -5,11 +5,11 @@ using UnityEngine;
 
 namespace TMG.ModularInventory
 {
-    internal class ItemPropertiesDropDown : AdvancedDropdown
+    internal class ItemModulesDropDown : AdvancedDropdown
     {
         private Action<Type> _onSelected;
 
-        public ItemPropertiesDropDown(Action<Type> onSelected) : base(new AdvancedDropdownState())
+        public ItemModulesDropDown(Action<Type> onSelected) : base(new AdvancedDropdownState())
         {
             _onSelected = onSelected;
             minimumSize = new Vector2(200, 400);
@@ -17,15 +17,15 @@ namespace TMG.ModularInventory
 
         protected override AdvancedDropdownItem BuildRoot()
         {
-            AdvancedDropdownItem root = new AdvancedDropdownItem("Properties");
-            TypeCache.TypeCollection propertyTypes = TypeCache.GetTypesDerivedFrom<IItemModule>();
+            AdvancedDropdownItem root = new AdvancedDropdownItem("Modules");
+            TypeCache.TypeCollection moduleTypes = TypeCache.GetTypesDerivedFrom<IItemModule>();
 
-            foreach (Type type in propertyTypes)
+            foreach (Type type in moduleTypes)
             {
                 if (!type.IsClass || type.IsAbstract && type.IsGenericType)
                     continue;
                 
-                root.AddChild(new ItemModuleDropdownItem(type.Name.Replace("Property", ""), type));
+                root.AddChild(new ItemModuleDropdownItem(type.Name.Replace("Module", ""), type));
             }
 
             return root;

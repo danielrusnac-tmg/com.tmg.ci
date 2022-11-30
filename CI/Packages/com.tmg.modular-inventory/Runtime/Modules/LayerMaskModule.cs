@@ -2,5 +2,5 @@
 
 namespace TMG.ModularInventory.Properties
 {
-    public class LayerMaskProperty : ItemModule<LayerMask> { }
+    public class LayerMaskModule : ItemModule<LayerMask> { }
 }

@@ -5,14 +5,14 @@ using UnityEngine;
 
 namespace TMG.ModularInventory
 {
-    [CreateAssetMenu(menuName = "Inventories/Property ID Database", fileName = "propertyIdDatabase")]
-    public class PropertyIdDatabase : ScriptableObject, ISerializationCallbackReceiver
+    [CreateAssetMenu(menuName = "Inventories/Module ID Database", fileName = "moduleIdDatabase")]
+    public class ModuleIdDatabase : ScriptableObject, ISerializationCallbackReceiver
     {
-        [SerializeField] private PropertyNameID[] _propertyNames = Array.Empty<PropertyNameID>();
+        [SerializeField] private ModuleNameID[] _moduleyNames = Array.Empty<ModuleNameID>();
 
         private static Dictionary<int, string> s_nameById = new Dictionary<int, string>();
 
-        public static string GetPropertyName(int id)
+        public static string GetModuleName(int id)
         {
             return s_nameById.ContainsKey(id) 
                 ? string.Empty 
@@ -21,21 +21,21 @@ namespace TMG.ModularInventory
 
         public void OnBeforeSerialize()
         {
-            _propertyNames = s_nameById.Select(pair => new PropertyNameID(pair.Key, pair.Value)).ToArray();
+            _moduleyNames = s_nameById.Select(pair => new ModuleNameID(pair.Key, pair.Value)).ToArray();
         }
 
         public void OnAfterDeserialize()
         {
-            s_nameById = _propertyNames.ToDictionary(propertyName => propertyName.ID, propertyName => propertyName.Name);
+            s_nameById = _moduleyNames.ToDictionary(moduleName => moduleName.ID, moduleName => moduleName.Name);
         }
 
         [Serializable]
-        private struct PropertyNameID
+        private struct ModuleNameID
         {
             public int ID;
             public string Name;
 
-            public PropertyNameID(int id, string name)
+            public ModuleNameID(int id, string name)
             {
                 ID = id;
                 Name = name;
