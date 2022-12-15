@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace TMG.Builder
+﻿namespace TMG.Builder
 {
     public static class JenkinsBuildProcess
     {
@@ -9,7 +7,7 @@ namespace TMG.Builder
         /// </summary>
         public static void PerformBuild()
         {
-            GameBuilder.Build(BuildData.Parse(Environment.GetCommandLineArgs()));
+            GameBuilder.BuildInBatchMode();
         }
     }
 }
