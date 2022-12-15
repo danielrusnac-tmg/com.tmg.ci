@@ -1,4 +1,4 @@
-﻿namespace TMG.Builder
+﻿namespace TMG.CI
 {
     public static class JenkinsBuildProcess
     {

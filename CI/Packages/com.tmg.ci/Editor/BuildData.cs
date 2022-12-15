@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEditor;
 
-namespace TMG.Builder
+namespace TMG.CI
 {
     public struct BuildData
     {
