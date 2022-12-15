@@ -1,6 +1,6 @@
 {
-  "name": "com.tmg.builder",
+  "name": "com.tmg.ci",
   "version": "1.0.0",
-  "displayName": "Builder",
+  "displayName": "CI",
   "description": "Continues Integration pipeline for Unity."
 }

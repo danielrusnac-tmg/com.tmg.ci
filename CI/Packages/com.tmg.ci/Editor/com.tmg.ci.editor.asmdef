@@ -1,7 +1,10 @@
 {
-    "name": "TMG.Builder",
-    "rootNamespace": "TMG.Builder",
-    "references": [],
+    "name": "TMG.CI",
+    "rootNamespace": "TMG.CI",
+    "references": [
+        "Unity.Addressables",
+        "Unity.Addressables.Editor"
+    ],
     "includePlatforms": [
         "Editor"
     ],

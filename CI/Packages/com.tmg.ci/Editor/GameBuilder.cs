@@ -1,5 +1,8 @@
 ﻿using System;
 using UnityEditor;
+using UnityEditor.AddressableAssets.Build;
+using UnityEditor.AddressableAssets.Settings;
+using UnityEngine.AddressableAssets;
 
 namespace TMG.Builder
 {
@@ -40,7 +43,8 @@ namespace TMG.Builder
 
         private static void BuildAddressables()
         {
-            
+            AddressableAssetSettings.CleanPlayerContent();
+            AddressableAssetSettings.BuildPlayerContent();
         }
 
         private static void Exit(int status, BuildData data)
